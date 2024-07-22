@@ -1,27 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Build a Customer Support Bot
-# 
-# Customer support bots can free up teams' time by handling routine issues, but it can be hard to build a bot that reliably handles diverse tasks in a way that doesn't leave the user pulling their hair out.
-# 
-# In this tutorial, you will build a customer support bot for an airline to help users research and make travel arrangements. You'll learn to use LangGraph's interrupts and checkpointers and more complex state to organize your assistant's tools and manage a user's flight bookings, hotel reservations, car rentals, and excursions. It assumes you are familiar with the concepts presented in the [LangGraph introductory tutorial](https://langchain-ai.github.io/langgraph/tutorials/introduction/).
-# 
-# By the end, you'll have built a working bot and gained an understanding of  LangGraph's key concepts and architectures. You'll be able to apply these design patterns to your other AI projects.
-# 
-# Your final chat bot will look something like the following diagram:
-# 
-# ![Final Diagram](./img/part-4-diagram.png)
-# 
-# Let's start!
-# 
-# ## Prerequisites
-# 
-# First, set up your environment. We'll install this tutorial's prerequisites, download the test DB, and define the tools we will reuse in each section.
-# 
-# We'll be using Claude as our LLM and define a number of custom tools. While most of our tools will connect to a local sqlite database (and require no additional dependencies), we will also provide a general web search to the agent using Tavily.
-
-
+# https://github.com/langchain-ai/langgraph/blob/610b6cc78cf682e4dbc7c155fbda04227136ebf0/examples/customer-support/customer-support.ipynb
 
 get_ipython().run_cell_magic('capture', '--no-stderr', '% pip install -U langgraph langchain-community langchain-anthropic tavily-python pandas\n')
 

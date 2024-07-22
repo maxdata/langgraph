@@ -3,27 +3,6 @@
 
 # # Complex data extraction with function calling
 # 
-# Function calling is a core primitive for integrating LLMs within your software stack. We use it throughout the LangGraph docs, since developing with function calling (aka tool usage) tends to be much more stress-free than the traditional way of writing custom string parsers.
-# 
-# However, even GPT-4, Opus, and other powerful models still struggle with complex functions, especially if your schema involves any nesting or if you have more advanced data validation rules.
-# 
-# There are three basic ways to increase reliability: better prompting, constrained decoding, and **validation with re-prompting**.
-# 
-# We will cover two approaches to the last technique here, since it is generally applicable across any LLM that supports tool calling.
-# 
-# ## Regular Extraction with Retries
-# 
-# Both examples here invoke a simple looping graph that takes following approach:
-# 1. Prompt the LLM to respond.
-# 2. If it responds with tool calls, validate those.
-# 3. If the calls are correct, return. Otherwise, format the validation error as a new [ToolMessage](https://api.python.langchain.com/en/latest/messages/langchain_core.messages.tool.ToolMessage.html#langchain_core.messages.tool.ToolMessage) and prompt the LLM to fix the errors. Taking us back to step (1).
-# 
-# 
-# The techniques differ only on step (3). In this first step, we will prompt the original LLM to regenerate the function calls to fix the validation errors. In the next section, we will instead prompt the LLM to generate a **patch** to fix the errors, meaning it doesn't have to re-generate data that is valid.
-
-
-
-get_ipython().run_cell_magic('capture', '--no-stderr', '%pip install -U langchain-anthropic langgraph\n# Or do langchain-{groq|openai|etc.} for another package with tool calling\n')
 
 
 # Set up your environment. If you are using groq, anthropic, etc., you will need to update different API keys.
